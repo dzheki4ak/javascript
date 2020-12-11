@@ -1,0 +1,14 @@
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+Метод forEach, filter (перебор массива);
+Метод .sort() якщо не отримує ніяку функцію в дужки - переводить елементи масива в строку
+     змінює вхідний масив
+Копіювати масив const copy = [...inputArray];
+                const copy = slice();
+Метод reduce
+Метод [1, 2, 3, 4].concat(2, 6, [8, 10, 12]) => [1, 2, 3, 4, 2, 6, 8, 10, 12];
+Metod .flat(); переводить масив у флет масив
+
+const inArray = [6, 43, 64, 65, 654, 1, 15, 5, 31, 4, 43, 6];
+
+MAP, SORT, FILTER, REDUCE - знати ППЦ
