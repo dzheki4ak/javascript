@@ -17,11 +17,14 @@ const contArr = [
      { name: 'Sam', phoneNumber: '444-44-44' }
 ];
 
-function sortContacts (contArr, boolean) {
+function sortContacts (contArr, boolean=true) {
      let result = [];
-     if (!Array(contArr)) {
+     if (!Array.isArray(contArr)) {
           return null;
-     } else if (boolean === true) {
+
+     }
+     
+      if (boolean) {
           result = contArr.sort((el1, el2) => {
                return el1.name.localeCompare(el2.name);
           });
@@ -33,4 +36,5 @@ function sortContacts (contArr, boolean) {
 
      return result;
 }
+
 
