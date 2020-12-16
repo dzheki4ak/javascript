@@ -1,15 +1,15 @@
 
-export function getAdults(object) {
+export function getAdults(object, minAge) {
      let adults = {};
      for (let elem in object) {
-          if (object[elem] >= 18) {
+          if (object[elem] >= minAge) {
                adults[elem] = object[elem];
           }
      }
      return adults;
 }
 
-/**************** */
+
 
 
 export const withdraw = (clients, balances, client, amount) => {
@@ -25,7 +25,7 @@ export const withdraw = (clients, balances, client, amount) => {
   
  };
 
- /***************** */
+
 
 export function reverseArray(inArray) {
      let outArray = [...inArray];
