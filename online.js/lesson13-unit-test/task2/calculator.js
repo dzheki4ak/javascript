@@ -1,3 +1,5 @@
+'use strict';
+
 export const getSquaredArray = array => {
      return array.map(el => el ** 2);
 };
