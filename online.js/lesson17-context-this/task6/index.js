@@ -26,18 +26,19 @@ const student = {
     * создайте ф-цию sayStudentName которая будет выводить в консоль имя студента 'Tom'
     * используйте .bind и ф-цию sayName
     */
-   export const sayStudentName = sayName.bind(student);
-   sayStudentName();
-   
+ const sayStudentName = sayName.bind(student);
+ sayStudentName();
+ 
+ 
    /*
     * создайте ф-цию sayBruceName которая будет выводить в консоль имя 'Bruce'
     * используйте ф-цию sayName и .bind с нужным объектом
     */
-   export const sayBruceName = sayName.bind({name: 'Bruce'});
+   const sayBruceName = sayName.bind({name: 'Bruce'});
    sayBruceName();
-   
-   /* ===> 2 <=== */
-   const company = {
+ 
+ /* ===> 2 <=== */
+ const company = {
      companyName: 'Microsoft',
    };
    
@@ -51,12 +52,11 @@ const student = {
     * используйте ф-цию greeting и .bind с нужным объектом и аргументами
     * specialGreeting не должна принимать ни одного аргумента
     */
-   
-   export const specialGreeting = greeting.bind(company, 'Bob', 'Marley');
-   specialGreeting();
-   
-   /* ===> 3 <=== */
-   const country = {
+ const specialGreeting = greeting.bind(company, 'Bob', 'Marley');
+ specialGreeting();
+ 
+ /* ===> 3 <=== */
+ const country = {
      countryName: 'Ukraine',
      capital: 'Kyiv',
    };
@@ -72,11 +72,11 @@ const student = {
     * используйте ф-цию getPopulation и .bind с нужным объектом и аргументами
     * getUkrainePopulation не должна принимать ни одного аргумента
     */
-    export const getUkrainePopulation = getPopulation.bind(country, 43000);
-    getUkrainePopulation();
-   
-   /* ===> 4 <=== */
-   const transaction = {
+ const getUkrainePopulation = getPopulation.bind(country, 43000);
+ console.log(getUkrainePopulation());
+ 
+ /* ===> 4 <=== */
+ const transaction = {
      amount: 1200,
      operation: 'sell',
      currency: 'USD',
@@ -99,5 +99,5 @@ const student = {
     * используйте метод transaction.printTransaction и .bind с нужным объектом
     * printSpecialTransaction не должна принимать ни одного аргумента
     */
-   export const printSpecialTransaction = transaction.printTransaction.bind(anotherTransaction);
-   printSpecialTransaction();
+ const printSpecialTransaction = transaction.printTransaction.bind(anotherTransaction);
+ printSpecialTransaction(); 
