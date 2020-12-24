@@ -1,31 +1,44 @@
-// 'use strict';
+const outArr = [];
+
+for (let i = 0; i <= 100; i++) {
+     if(i % 3 === 0 && i % 5 === 0) {
+          outArr.push('FizzBuzz');
+     }else if(i % 3 === 0) {
+          outArr.push('Fizz')
+     }else if(i % 5 === 0) {
+          outArr.push('Buzz')
+     }else {
+          outArr.push(i)
+     }
+     
+}
+console.log(outArr);
+
+function fibonacciGenerator (n) {
+     const arr = [0, 1];
+     for (let i = 2; i < n; i += 1){
+       arr.push(arr[i - 2] + arr[i - 1])
+     }
+    return arr;
+}
+fibonacciGenerator (10);
 
 /*
-На складах, порядок. Роботи стоять без роботи. Проведемо інвентаризацію? Потрібно навчити роботів розрізняти коробки і  порахувати їх кількість. Коробки представлені у вигляді рядка aaabcda, де кожен символ, це коробка відповідного типу. Створи функцію countBoxes, яка буде приймати рядок коробок boxes і повертати об'єкт з кількістю відповідних коробок.
+Вночі у головного інженера зі столу хтось потягнув схему, за якою ми виготовляли наших роботів. 
+Тепер ми не знаємо, які дані потрібні для робота, щоб він працював коректно. 
+Пропоную зловити одного робота, що зараз прибирає у коридорі, підключитися до його терміналу і дізнатися, 
+які поля нам потрібні для нових роботів. Створи функцію getRobotSchema, яка приймає об'єкт robot
+ і повертає набір ключів і типи значень, які в них мають зберігатися. 
+ Результат має виглядати ось так: [[key, type], [key, type]...]
 
 Приклад:
 
-countBoxes('aabca') === {a: 3, b: 1, c: 1}
-countBoxes('aaaaca31') === {a: 5, c: 1, 3: 1, 1: 1}
-countBoxes('') === {}
-*/
-/*
- * @param {string} boxes
- *
- * @returns object
- */
+  const robot = {
+    version: 16,
+    name: 'Cleaner 3000',
+    coords: [345, 12],
+  };
 
-const boxes = 'aaabcda';
-
-function countBoxes(boxes) {
-  let boxArr = boxes.split('');
-  let boxRed = boxArr.filter((elem, index) => boxArr.indexOf(elem) === index);
-  let obj = {...boxRed};
-
-  console.log(boxArr);
-  console.log(boxRed);
-  console.log(obj);
-}
-
-countBoxes(boxes);
-
+  getRobotSchema(robot) === [['version', 'number'], ['name', 'string'], ['coords', 'object']]
+  */
+ 
