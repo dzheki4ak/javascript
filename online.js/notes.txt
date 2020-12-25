@@ -28,3 +28,25 @@ arr.splice(index[, deleteCount, elem1, ..., elemN])
 Оба индекса start и end могут быть отрицательными. В таком случае отсчёт будет осуществляться с конца массива.
 
 Это похоже на строковый метод str.slice, но вместо подстрок возвращает подмассивы.
+
+Code quality (javascript)
+Don't use:
+1. naming of files/funcs/variables is important 
+2. magical numbers or strinags 
+3. nesting of the code, more than 2 
+4. too much if/else statements 
+5. duplicates of the code 
+5. variable that is used only once
+6. for/while and other loops, use arrays methods 
+7. redundant iteration throught arrays or objects - speed 
+8. take attention to the memory usage, don't create new array if it is not needed 
+10. divide your code into logical blocks
+11. BIG code blocks (inside {} - if, loop or array methods) 
+12. every line of code should be easy to read
+13. every piece of code must be tested 
+
+How to work on tech tasks. Step by step guide
+1. Learn requirements
+2. Create step by step algo (& input/output for funtions)
+3. Write draft solution & testing
+4. Refactoring & final testing -> final solution
