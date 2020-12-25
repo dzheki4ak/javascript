@@ -31,16 +31,8 @@ outerHTML
 */
 export const getTitle = () => document.querySelector('.title').textContent;
 
-getTitle();
-
 export const getDescription = () => document.querySelector('.about').innerText;
-
-getDescription();
 
 export const getPlans = () => document.querySelector('.plans').innerHTML;
 
-getPlans();
-
 export const getGoal = () => document.querySelector('.goal').outerHTML;
-
-getGoal();
