@@ -24,6 +24,15 @@ const greenDiv = pasteElem.bind(null, 'green', 'DIV');
 const greenP = pasteElem.bind(null, 'green', 'P');
 const greenSpan = pasteElem.bind(null, 'green', 'SPAN');
 
+div.addEventListener('click', greyDiv, true);
+div.addEventListener('click', greenDiv);
+
+p.addEventListener('click', greyP, true);
+p.addEventListener('click', greenP);
+
+span.addEventListener('click', greySpan, true);
+span.addEventListener('click', greenSpan);
+
 const attachHandlers = () => {
      div.addEventListener('click', greyDiv, true);
      div.addEventListener('click', greenDiv);
