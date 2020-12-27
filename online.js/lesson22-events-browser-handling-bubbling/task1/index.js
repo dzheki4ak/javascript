@@ -34,9 +34,12 @@ const attachHandlers = () => {
 };
 
 const removeHandlers = () => {
-     div.removeEventListener();
-     p.removeEventListener();
-     span.removeEventListener();
+     div.removeEventListener('click', greenDiv);
+     p.removeEventListener('click', greenP);
+     span.removeEventListener('click', greenSpan);
+     div.removeEventListener('click', greyDiv, true);
+     p.removeEventListener('click', greyP, true);
+     span.removeEventListener('click', greySpan, true);
 };
 
 const eventClean = () => document.querySelector('.events-list').innerHTML = '';
