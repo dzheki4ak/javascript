@@ -58,8 +58,8 @@ const onPasswordChahnge = event => {
      passwordError.textContent = errorText;
 }
 
-emailInput.addEventListener('change', onEmailChange);
-passwordInput.addEventListener('change', onPasswordChahnge);
+emailInput.addEventListener('input', onEmailChange);
+passwordInput.addEventListener('input', onPasswordChahnge);
 
 const formElem = document.querySelector('.login-form');
 
