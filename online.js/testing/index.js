@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
@@ -239,7 +240,219 @@ validatePassword('Admin12') === false
 validatePassword('Admin123') === true
 validatePassword('@dmiN122') === false
 */
-'password'.charCodeAt()
-'Admin12'.charCodeAt()
-'Admin123'.charCodeAt()
-'@dmiN122'.charCodeAt()
+
+/*------------------------------------------------------*/
+
+/*
+Given: an array containing hashes of names
+
+Return: a string formatted as a list of names separated by commas except for the last two names,
+which should be separated by an ampersand.
+
+Example:
+
+list([ {name: 'Bart'}, {name: 'Lisa'}, {name: 'Maggie'} ])
+// returns 'Bart, Lisa & Maggie'
+
+list([ {name: 'Bart'}, {name: 'Lisa'} ])
+// returns 'Bart & Lisa'
+
+list([ {name: 'Bart'} ])
+// returns 'Bart'
+
+list([])
+// returns
+*/
+
+const namesArr = [ {name: 'Bart'}, {name: 'Lisa'}, {name: 'Maggie'} ];
+
+function list(names){
+     const arr = names.map(obj => obj.name);
+     let resStr = '';
+     for (let i = 0; i < arr.length; i += 1) {
+          if(arr.length <= 1) {
+               resStr += arr[i];
+               break;
+          }
+          if (arr.length - i > 2) {
+               resStr += `${arr[i]}, `;
+          } 
+          if (arr.length - i === 2 ) {
+               resStr += `${arr[i]} `
+          } 
+          if (arr.length - i < 2 ) {
+               resStr += `& ${arr[i]}`
+          }
+          
+     }
+     return resStr;
+}
+list(namesArr);
+
+/*------------------------------------------------------*/
+/*
+Your goal in this kata is to implement a difference function, 
+which subtracts one list from another and returns the result.
+
+It should remove all values from list a, which are present in list b.
+
+arrayDiff([1,2],[1]) == [2]
+If a value is present in b, all of its occurrences must be removed from the other:
+
+arrayDiff([1,2,2,2,3],[2]) == [1,3]
+*/
+
+const arrayDiffV2 = (a, b) => {
+          const resArr = [];
+          a.forEach(el => {
+               if (!b.includes(el)) {
+                    resArr.push(el);
+               }
+          })
+     return resArr;
+};
+
+/*------------------------------------------------------*/
+
+/*
+Trolls are attacking your comment section!
+
+A common way to deal with this situation is to remove all of the 
+
+vowels from the trolls' comments, neutralizing the threat.
+
+Your task is to write a function that takes a string and return a new string with all vowels removed.
+
+For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+
+Note: for this kata y isn't considered a vowel.
+*/
+
+function disemvowel(str) {
+     const vowels = 'aeiouAEIOU'.split('');
+     const strArr = str.split('');
+     const resArr = [];
+
+     strArr.forEach(el => {
+          if(!vowels.includes(el)) {
+               resArr.push(el);
+          }
+     });
+     
+     return resArr.join('');
+};
+
+disemvowel("This website is for losers LOL!")
+/*------------------------------------------------------*/
+const isPalindrome = str => str.split('').reverse().join('') === str;
+/*------------------------------------------------------*/
+
+const descendingOrder = n => +(n.toString().split('').sort().reverse().join(''));
+descendingOrder(42145);
+
+/*------------------------------------------------------*/
+
+/*
+You get an array of numbers, return the sum of all of the positives ones.
+
+Example [1,-4,7,12] => 1 + 7 + 12 = 20
+*/
+
+const positiveSum = arr => arr.filter(el => el > 0).reduce((acc, el) => acc + el, 0);
+
+positiveSum([1,-4,7,12])
+/*------------------------------------------------------*/
+/*
+
+A square of squares
+You like building blocks.
+You especially like building blocks that are squares. 
+And what you even like more, is to arrange them into a square of square building blocks!
+However, sometimes, you can't arrange them into a square. 
+Instead, you end up with an ordinary rectangle! 
+Those blasted things! If you just had a way to know, whether you're currently working in vain… 
+Wait! That's it! You just have to check if your number of building blocks is a perfect square.
+
+Task
+Given an integral number, determine if it's a square number:
+
+In mathematics, a square number or perfect square is an integer that is the square of an integer;
+in other words, it is the product of some integer with itself.
+
+The tests will always use some integral number, so don't worry about that in dynamic typed languages.
+
+Examples
+-1  =>  false
+ 0  =>  true
+ 3  =>  false
+ 4  =>  true
+25  =>  true
+26  =>  false
+
+*/
+
+const isSquare = n => n < 0 || Math.sqrt(n).toString().split('').includes('.') ? false : true;
+
+
+// const isSquareV2 = n => Number.isInteger(Math.sqrt(n));
+
+/*------------------------------------------------------*/
+
+/*
+Return the number (count) of vowels in the given string.
+
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+The input string will only consist of lower case letters and/or spaces.
+*/
+const getCount = str => {
+     let vowelsCount = 0;
+     const vowels = 'aeiouAEIOU';
+     str.split('').forEach(el => {
+          if (vowels.includes(el)) {
+               vowelsCount += 1
+          }
+     });     
+     return vowelsCount;
+   }
+/*------------------------------------------------------*/
+
+/*
+In this little assignment you are given a string of space separated numbers, 
+and have to return the highest and lowest number.
+
+Example:
+
+highAndLow("1 2 3 4 5");  // return "5 1"
+highAndLow("1 2 -3 4 5"); // return "5 -3"
+highAndLow("1 9 3 4 -5"); // return "9 -5"
+Notes:
+
+All numbers are valid Int32, no need to validate them.
+There will always be at least one number in the input string.
+Output string must be two numbers separated by a single space, and highest number is first.
+*/
+const nmbrs = "1 9 3 4 -5";
+
+const highAndLow = numbers => {
+     const arr = numbers.split(' ');
+     return `${Math.max(...arr)} ${Math.min(...arr)}`;
+}
+
+highAndLow(nmbrs);
+/*------------------------------------------------------*/
+/*
+Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+Examples:
+
+solution(c'ab', 'bc') // returns true
+solution('abc', 'd') // returns false
+*/
+const solution = (str, ending) => str.slice(str.length - ending.length) === ending;
+
+const solution2 = (str, ending) => str.endsWith(ending);
+
+solution('abrakadabra', 'dafra');
+
+/*------------------------------------------------------*/

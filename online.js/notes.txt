@@ -11,9 +11,13 @@ Metod .flat(); переводить масив у флет масив
 
 const inArray = [6, 43, 64, 65, 654, 1, 15, 5, 31, 4, 43, 6];
 
-MAP, SORT, FILTER, REDUCE - знати ППЦ
 
 
+ARRAY METHODS - MAP, SORT, FILTER, REDUCE - знати ППЦ
+EVENTS !!!! повчити
+OBJECTS - повчити
+
+ 
 https://learn.javascript.ru/array-methods
 >>> Метод arr.splice(str) – это универсальный «швейцарский нож» для работы с массивами. Умеет всё: добавлять, удалять и заменять элементы.
 
