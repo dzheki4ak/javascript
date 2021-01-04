@@ -456,3 +456,4 @@ const solution2 = (str, ending) => str.endsWith(ending);
 solution('abrakadabra', 'dafra');
 
 /*------------------------------------------------------*/
+
