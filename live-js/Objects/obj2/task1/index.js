@@ -1,4 +1,3 @@
-'use strict';
 /*
 урок 8. объекты: основы
 Собрать объект
@@ -18,11 +17,11 @@ buildObject принимает 2 аргумента: keysList - массив с�
 Помните, что .reduce принимает не только 2 аргумента
 Принимается решение и с обычным циклом for
 */
-//Object.values();
-//object.keys();
+// Object.values();
+// object.keys();
 
-//in: array, array
-//out: object
+// in: array, array
+// out: object
 
 // algo:
 // const keys = ['name', 'address', 'age'];
@@ -31,11 +30,9 @@ buildObject принимает 2 аргумента: keysList - массив с�
 // step 1
 // key = 'name' ==> {name: 'Bob'}
 
-//step2
+// step2
 // key = 'address', {name: 'Bob'} ==> {name: 'Bob', address: 'Ukraine'}
 function buildObject (keys, values ) {
-     return keys.reduce((acc, key, index) => {
-          return {...acc, [key]: values[index] }
-     }, {});
+     return keys.reduce((acc, key, index) => ({...acc, [key]: values[index] }), {});
 }
 

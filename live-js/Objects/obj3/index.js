@@ -49,17 +49,17 @@ const customers = {
      },
  };
 
-//in: obj
-//out: array of objects
+// in: obj
+// out: array of objects
 
-//algo:
-//1. copy obj, and Get obj entries +++
-//2. Use .map() obj method
-//3. Sort out array;
+// algo:
+// 1. copy obj, and Get obj entries +++
+// 2. Use .map() obj method
+// 3. Sort out array;
 
-//callabck
-//in:
-//ut:
+// callabck
+// in:
+// out:
 
 const getCustomersListV1 = obj => {
      const entries = Object.entries(obj);

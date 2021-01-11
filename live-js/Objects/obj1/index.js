@@ -77,7 +77,7 @@ const mergeObjectsV4 = (obj1, obj2) => {
 */
 
 function addPropertyV1(userData, userId) {
-     userData.Id = userId;
+     userData.id = userId;
      return userData;
 }
 function addPropertyV2(userData, userId) {

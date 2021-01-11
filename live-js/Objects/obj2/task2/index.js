@@ -1,4 +1,3 @@
-'use strict';
 /*
 урок 8. объекты: основы
 Сравнить 2 объекта
@@ -34,12 +33,43 @@ compareObjects принимает 2 аргумента: obj1 - объект, obj
             compareObjects(obj1, obj4); // true
 */
 
-//in: object, object
-//out: boolean
+// in: object, object
+// out: boolean
 
 // algo:
-//1. 
-//2.
-function compareObjects (obj1, obj2) {
+// 1. 
+// 2.
 
+const obj1 = {
+     name: 'Tom',
+     age: 17
+ };
+
+ const obj2 = {
+     name: 'Bob',
+     age: 17
+ };
+
+ const obj3 = {
+     name: 'Bob',
+     age: 17,
+     student: false
+ };
+
+ const obj4 = {
+     name: 'Tom',
+     age: 17,
+ };
+
+function compareObjects (objN1, objN2) {
+     const n1 = Object.values(objN1).join('');
+     const n2 = Object.values(objN2).join('');
+
+     if (n1 === n2) {
+          return true;
+     }
+
+     return false;
 }
+
+compareObjects(obj1, obj4);
