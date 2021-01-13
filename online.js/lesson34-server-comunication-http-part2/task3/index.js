@@ -23,6 +23,14 @@ const submittingFormData = (event) => {
     {},
   );
 
+  createUserForm(user)
+.then(response => response.ok ? response : Promise.reject(response))
+.then(() => input.reset())
+.then(() => getUserForm())
+.catch(() => error.textContent = 'Failed to create user')
+.finally(() => input.addEventListener('input', textError))
+};
+
 const submitButtonElem = document.querySelector('.login-form');
 submitButtonElem.addEventListener('submit', submittingFormData);
 
@@ -46,10 +54,3 @@ const textError = event => {
   };
 };
 
-createUserForm(user)
-.then(response => response.ok ? response : Promise.reject(response))
-.then(() => input.reset())
-.then(() => getUserForm())
-.catch(() => error.textContent = 'Failed to create user')
-.finally(() => input.addEventListener('input', textError))
-};
