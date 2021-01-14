@@ -1,10 +1,11 @@
-import { onCreateTask } from './createTask.js';
-import { onToggleTask } from './updateTask.js';
+  
+import { additionListTasks } from './createTask.js';
+import { onListClick } from './onListClick.js';
 
 export const initTodoListHandlers = () => {
-  const createBtnElem = document.querySelector('.create-task-btn');
-  createBtnElem.addEventListener('click', onCreateTask);
+  const buttonElem = document.querySelector('.btn');
+  buttonElem.addEventListener('click', additionListTasks);
 
-  const todoListElem = document.querySelector('.list');
-  todoListElem.addEventListener('click', onToggleTask);
-};
+  const listElem = document.querySelector('.list');
+  listElem.addEventListener('click', onListClick);
+}
