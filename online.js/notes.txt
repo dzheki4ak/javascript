@@ -7,7 +7,6 @@ DATES !!!
 THIS!!!
 PROTOTYPES!!!
 DOM!!!
-EVENTS!!!
 LOCAL STORAGE!!!
 
 
