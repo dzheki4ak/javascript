@@ -52,6 +52,8 @@ const user = {
 // const printMessagebinded = myBind(printMessage, user);
 // printMessagebinded('Germany', 'Berlin');
 
+
+
 // option 2 using apply
 /*
 function myBind(func, context, ...arg) {
