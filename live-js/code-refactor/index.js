@@ -1,37 +1,32 @@
-/* eslint-disable no-shadow */
 /* eslint-disable no-return-assign */
-const initUrl = 'https://5ffdb7fbd9ddad0017f68719.mockapi.io/api/v1/users';
+const baseUrl = 'https://5ff2e7d128c3980017b18ca3.mockapi.io/api/v1/form';
 
-const button = document.querySelector('.submit-button');
-const error = document.querySelector('.error-text');
-const input = document.querySelector('.login-form');
+const buttonElem = document.querySelector('.submit-button');
+const errorElem = document.querySelector('.error-text');
+const inputsElem = document.querySelector('.login-form');
 
 const onInputValid = () =>
-  input.reportValidity() ? (button.disabled = false) : (button.disabled = true);
-
-input.addEventListener('input', onInputValid);
-
+  inputsElem.reportValidity() ? (battonElem.disabled = false) : (battonElem.disabled = true);
+inputsElem.addEventListener('input', onInputValid);
 const submittingFormData = event => {
   event.preventDefault();
-
-  const user = [...new FormData(input)].reduce(
+  const user = [...new FormData(inputsElem)].reduce(
     (acc, [field, value]) => ({ ...acc, [field]: value }),
     {},
   );
 
   createUserForm(user)
     .then(response => (response.ok ? response : Promise.reject(response)))
-    .then(() => input.reset())
+    .then(() => inputsElem.reset())
     .then(() => getUserForm())
-    .catch(() => (error.textContent = 'Failed to create user'))
-    .finally(() => input.addEventListener('input', textError));
+    .catch(() => (errorElem.textContent = 'Failed to create user'))
+    .finally(() => inputsElem.addEventListener('input', textError));
 };
 
 const submitButtonElem = document.querySelector('.login-form');
 submitButtonElem.addEventListener('submit', submittingFormData);
-
 const createUserForm = user =>
-  fetch(initUrl, {
+  fetch(baseUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
@@ -40,12 +35,11 @@ const createUserForm = user =>
   });
 
 const getUserForm = () =>
-  fetch(initUrl)
+  fetch(baseUrl)
     .then(response => response.json())
     .then(value => alert(JSON.stringify(value)));
-
 const textError = event => {
   if (event.type === 'input') {
-    error.textContent = '';
+    errorElem.textContent = '';
   }
 };
